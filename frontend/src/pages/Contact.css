@@ -1,0 +1,468 @@
+.contact {
+  min-height: 100vh;
+  background: linear-gradient(rgba(139, 0, 0, 0.7), rgba(255, 0, 55, 0.7)),
+    url("../assets/1398075.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding-bottom: 80px;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+/* 头部 */
+.contact-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.contact-header h1 {
+  display: inline-block;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: white;
+  background: #FF0037;
+  border: 4px solid white;
+  padding: 20px 60px;
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-family: 'Futura', 'Helvetica', 'Arial', sans-serif;
+  box-shadow: 
+    8px 8px 0 rgba(0, 0, 0, 0.3),
+    0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.contact-subtitle {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* 内容区域 */
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* 表单区域 */
+.contact-form-section {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px);
+  border: 3px solid white;
+  border-radius: 0;
+  border-left: 8px solid #FF0037;
+  padding: 50px;
+  box-shadow: 
+    8px 8px 0 rgba(0, 0, 0, 0.3),
+    0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+
+.contact-form-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 30px;
+}
+
+/* 表单 */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Futura', 'Arial', sans-serif;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 16px 20px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 3px solid white;
+  border-radius: 0;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-family: 'Arial', sans-serif;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #FF0037;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 
+    0 0 0 3px rgba(255, 0, 55, 0.3),
+    4px 4px 0 rgba(255, 0, 55, 0.5);
+  transform: translateX(3px);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+/* 必填标记 */
+.required {
+  color: #ff0037;
+  font-weight: 700;
+}
+
+/* 错误状态 */
+.form-group input.error,
+.form-group textarea.error {
+  border-color: #ff0037;
+  background: rgba(255, 0, 55, 0.1);
+}
+
+/* 错误信息 */
+.error-message {
+  display: block;
+  color: #ff0037;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+/* 字符计数 */
+.char-count {
+  text-align: right;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 8px;
+}
+
+/* 提交按钮 */
+.submit-button {
+  width: 100%;
+  padding: 18px;
+  background: #FF0037;
+  color: white;
+  border: 3px solid white;
+  border-radius: 0;
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Futura', 'Helvetica', 'Arial', sans-serif;
+  box-shadow: 
+    6px 6px 0 rgba(0, 0, 0, 0.3),
+    0 6px 25px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 
+    8px 8px 0 rgba(0, 0, 0, 0.3),
+    0 10px 35px rgba(0, 0, 0, 0.3);
+}
+
+.submit-button:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 
+    3px 3px 0 rgba(0, 0, 0, 0.3),
+    0 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+.submit-button:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.button-arrow {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.submit-button:hover .button-arrow {
+  transform: translateX(5px);
+}
+
+/* 成功消息 */
+/* 成功消息 */
+.success-message {
+  text-align: center;
+  padding: 80px 20px;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.success-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: rgba(76, 175, 80, 0.2);
+  border: 3px solid #4CAF50;
+  border-radius: 50%;
+  font-size: 3rem;
+  color: #4CAF50;
+  margin-bottom: 20px;
+  animation: scaleIn 0.5s ease 0.2s both;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.success-message h3 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.success-message p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.success-icon {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background: rgba(76, 175, 80, 0.3);
+  border-radius: 50%;
+  line-height: 80px;
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.success-message h3 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.success-message p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* 联系信息区域 */
+.contact-info-section {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px);
+  border: 3px solid white;
+  border-radius: 0;
+  border-left: 8px solid #FF0037;
+  padding: 50px;
+  box-shadow: 
+    8px 8px 0 rgba(0, 0, 0, 0.3),
+    0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.contact-info-section h2 {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 900;
+  color: white;
+  background: #FF0037;
+  border: 3px solid white;
+  padding: 12px 40px;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: 'Futura', 'Helvetica', 'Arial', sans-serif;
+  box-shadow: 
+    5px 5px 0 rgba(0, 0, 0, 0.3),
+    0 6px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+/* 信息卡片 */
+.info-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-item {
+  background: rgba(0, 0, 0, 0.4);
+  border: 3px solid white;
+  border-radius: 0;
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.info-item:hover {
+  transform: translateY(-5px) rotate(-1deg);
+  border-color: #FF0037;
+  box-shadow: 
+    5px 5px 0 rgba(255, 0, 55, 0.5),
+    0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.info-item h3 {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Futura', 'Arial', sans-serif;
+}
+
+.info-link {
+  color: #FF0037;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-link:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.info-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.info-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.info-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 8px;
+}
+
+
+.info-card a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.info-card a:hover {
+  color: white;
+}
+
+.info-card p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* 响应式 */
+@media (max-width: 968px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 40px 20px;
+  }
+
+  .contact-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .contact-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .contact-form-section,
+  .contact-info-section {
+    padding: 35px 25px;
+  }
+
+  .contact-form-section h2,
+  .contact-info-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 14px 18px;
+  }
+
+  .submit-button {
+    padding: 16px 32px;
+  }
+
+  .success-icon {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 2.5rem;
+  }
+}

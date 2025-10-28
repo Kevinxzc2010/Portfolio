@@ -1,0 +1,259 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* background: rgba(0, 0, 0, 0.85); */
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  z-index: 1000;
+  height: 80px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  height: 100%;
+  position: relative;
+}
+
+.nav-container > div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 8px 0;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  transition: all 0.3s ease;
+}
+
+.nav-logo:hover {
+  opacity: 0.8;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-left: auto;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ff0037;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* 活跃状态 */
+.nav-link.active {
+  color: #ff0037;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0 20px;
+  }
+  .nav-logo {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .nav-logo:hover {
+    opacity: 0.9;
+  }
+
+  .logo-supreme {
+    height: 16px !important;
+    width: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  .logo-x {
+    font-size: 1.2rem !important;
+    font-weight: 900;
+    color: white;
+    line-height: 1;
+  }
+
+  .logo-ucf {
+    height: 24px !important;
+    width: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
+
+/* 导航栏时钟 */
+.nav-clock {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 30px;
+  background: linear-gradient(135deg, rgba(255, 0, 55, 0.8), rgba(139, 0, 0, 0.8));
+  border: 3px solid white;
+  border-radius: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 
+    4px 4px 0 rgba(0, 0, 0, 0.3),
+    0 6px 20px rgba(255, 0, 55, 0.4);
+  transition: all 0.3s ease;
+}
+
+
+
+.nav-clock:hover::before {
+  left: 100%;
+}
+
+.nav-clock:hover {
+  transform: translateX(-50%) translateY(-3px);
+  box-shadow: 
+    6px 6px 0 rgba(0, 0, 0, 0.3),
+    0 8px 25px rgba(255, 0, 55, 0.5);
+}
+
+.nav-clock-icon {
+  font-size: 1.8rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.nav-clock-time {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: white;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 2px;
+  text-shadow: 
+    2px 2px 0 rgba(0, 0, 0, 0.3),
+    0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* 汉堡菜单按钮 */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .nav-clock {
+    display: none; /* 移动端隐藏时钟 */
+  }
+
+  .hamburger {
+    display: flex; /* 移动端显示汉堡菜单 */
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    padding: 100px 30px 30px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}

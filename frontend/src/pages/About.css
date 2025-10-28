@@ -1,0 +1,929 @@
+.about {
+  min-height: 100vh;
+  padding-top: 80px;
+  background: linear-gradient(rgba(139, 0, 0, 0.6), rgba(255, 0, 55, 0.6)),
+    url("../assets/1398075.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding-bottom: 80px;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+.about-section {
+  margin-bottom: 60px;
+  animation: fadeInUp 0.6s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Intro Section */
+.intro-section {
+  text-align: center;
+  padding: 40px 0;
+  margin-bottom: 60px;
+}
+
+.intro-section h1 {
+  display: inline-block;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: white;
+  background: linear-gradient(135deg, #FF0037, #cc0028);
+  border: 3px solid white;
+  border-radius: 4px;
+  padding: 20px 60px;
+  margin-bottom: 30px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-family: 'Futura', 'Helvetica', 'Arial', sans-serif;
+  box-shadow: 
+    5px 5px 0 rgba(0, 0, 0, 0.2),
+    0 6px 25px rgba(255, 0, 55, 0.3);
+}
+
+.intro-text {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+  font-weight: 500;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Section Container */
+.about-section {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  padding: 50px;
+  margin-bottom: 40px;
+  box-shadow: 
+    6px 6px 0 rgba(0, 0, 0, 0.2),
+    0 6px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.about-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    8px 8px 0 rgba(0, 0, 0, 0.25),
+    0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Titles */
+.about-section h2 {
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: white;
+  background: linear-gradient(135deg, #FF0037, #cc0028);
+  border: 3px solid white;
+  border-radius: 4px;
+  padding: 15px 50px;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: 'Futura', 'Helvetica', 'Arial', sans-serif;
+  box-shadow: 
+    5px 5px 0 rgba(0, 0, 0, 0.2),
+    0 6px 25px rgba(255, 0, 55, 0.3);
+}
+
+/* Skills Progress Bars - 羽毛球版 */
+.skills-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.skills-progress.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-progress-item {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 25px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-left: 5px solid #FF0037;
+  border-radius: 8px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: visible;
+}
+
+/* 羽毛球图标 - 左侧装饰 */
+.skill-progress-item::after {
+  content: '🏸';
+  position: absolute;
+  left: -50px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-20deg);
+  font-size: 2rem;
+  opacity: 0.3;
+  transition: all 0.4s ease;
+}
+
+/* 悬停时羽毛球跳动 */
+.skill-progress-item:hover::after {
+  left: -45px;
+  opacity: 0.8;
+  transform: translateY(-50%) rotate(20deg);
+  animation: shuttlecockBounce 0.6s ease infinite;
+}
+
+@keyframes shuttlecockBounce {
+  0%, 100% {
+    transform: translateY(-50%) rotate(20deg);
+  }
+  50% {
+    transform: translateY(-55%) rotate(-20deg);
+  }
+}
+
+/* 背景光效 */
+.skill-progress-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 0, 55, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+  z-index: 0;
+}
+
+.skill-progress-item:hover::before {
+  left: 100%;
+}
+
+.skill-progress-item:hover {
+  border-color: rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.6);
+  transform: translateX(8px) scale(1.02);
+  box-shadow: 
+    0 0 20px rgba(255, 0, 55, 0.3),
+    0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.skill-progress-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.skill-name {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  animation: fadeInLeft 0.6s ease;
+}
+
+/* 技能名称前的羽毛球 */
+.skill-name::before {
+  content: '🏸';
+  margin-right: 12px;
+  font-size: 1.3rem;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(10deg);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.skill-percentage {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #FF0037;
+  font-family: 'Courier New', monospace;
+  text-shadow: 
+    0 0 10px rgba(255, 0, 55, 0.5),
+    0 2px 4px rgba(0, 0, 0, 0.5);
+  animation: fadeInRight 0.6s ease, pulse 2s ease-in-out infinite;
+  position: relative;
+}
+
+/* 百分比旁边的羽毛球 */
+.skill-percentage::after {
+  content: '🏸';
+  margin-left: 8px;
+  font-size: 0.9rem;
+  display: inline-block;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s ease;
+}
+
+.skill-progress-item:hover .skill-percentage::after {
+  opacity: 1;
+  transform: scale(1) rotate(360deg);
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* 进度条容器 */
+.progress-bar {
+  height: 16px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  overflow: visible;
+  position: relative;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* 进度条背景闪烁 */
+/* .progress-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  animation: shimmerBackground 3s ease-in-out infinite;
+}
+
+@keyframes shimmerBackground {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+} */
+
+/* 进度条填充 */
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #ff0037 0%,
+    #ff4757 25%,
+    #ff6b81 50%,
+    #ffa502 75%,
+    #ffc904 100%
+  );
+  background-size: 200% 200%;
+  border-radius: 6px;
+  width: 0;
+  transition: width 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  box-shadow: 
+    0 0 15px rgba(255, 0, 55, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  animation: glow 2s ease-in-out infinite, rainbow 5s ease infinite;
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 
+      0 0 15px rgba(255, 0, 55, 0.6),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 
+      0 0 25px rgba(255, 0, 55, 0.8),
+      0 0 40px rgba(255, 0, 55, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.skills-progress.animate .progress-fill {
+  width: calc(var(--width) * 1%);
+}
+
+/* 进度条内部闪光 */
+/* .progress-fill::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: shimmer 2.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+} */
+
+/* 进度条末端羽毛球 */
+.progress-fill::after {
+  content: '🏸';
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.skills-progress.animate .progress-fill::after {
+  opacity: 1;
+  animation: shuttlecockFly 2s ease-in-out infinite;
+}
+
+@keyframes shuttlecockFly {
+  0%, 100% {
+    right: -25px;
+    transform: translateY(-50%) rotate(0deg);
+  }
+  50% {
+    right: -30px;
+    transform: translateY(-55%) rotate(180deg);
+  }
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.skill-category {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-left: 4px solid #FFC904;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.skill-category:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+.skill-category h3 {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: rgba(255, 0, 55, 0.8);
+  border-color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 0, 55, 0.4);
+}
+
+/* Education */
+.education-item {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-left: 4px solid #FF0037;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.education-item:hover {
+  background: rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.education-header h3 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+}
+
+.education-date {
+  font-size: 0.9rem;
+  font-weight: 900;
+  color: #000;
+  background: #FFC904;
+  border: 2px solid white;
+  border-radius: 4px;
+  padding: 6px 16px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 8px rgba(255, 201, 4, 0.3);
+}
+
+.education-detail {
+  font-size: 1.1rem;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.education-location {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 10px;
+}
+
+/* Languages */
+.languages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.language-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-left: 4px solid #FFC904;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.language-item:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.5);
+  transform: translateX(3px);
+}
+
+.language-name {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+}
+
+.language-level {
+  font-size: 0.9rem;
+  font-weight: 900;
+  color: #000;
+  background: #FFC904;
+  border: 2px solid white;
+  border-radius: 4px;
+  padding: 6px 16px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 8px rgba(255, 201, 4, 0.3);
+}
+
+/* Beyond Code - 扑克牌 */
+.hobbies-section {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  padding: 50px;
+}
+
+.section-intro {
+  text-align: center;
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* 扑克牌 */
+.hobby-card {
+  background: white;
+  border: 3px solid rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  padding: 30px 20px;
+  position: relative;
+  aspect-ratio: 2.5/3.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    6px 6px 0 rgba(0, 0, 0, 0.3),
+    0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hobby-card::before {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 2rem;
+  font-weight: 900;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.hobby-card::after {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  font-size: 2rem;
+  font-weight: 900;
+  opacity: 0.15;
+  transform: rotate(180deg);
+  z-index: 0;
+}
+
+.poker-card::before,
+.poker-card::after { content: '♠'; color: #000; }
+
+.music-card::before,
+.music-card::after { content: '♥'; color: #FF0037; }
+
+.fishing-card::before,
+.fishing-card::after { content: '♦'; color: #0066cc; }
+
+.badminton-card::before,
+.badminton-card::after { content: '♣'; color: #006400; }
+
+.lol-card::before,
+.lol-card::after { content: '♠'; color: #FFD700; }
+
+.gundam-card::before,
+.gundam-card::after { content: '♥'; color: #dc143c; }
+
+.hobby-card:hover {
+  transform: translateY(-8px) rotate(1deg);
+  box-shadow: 
+    10px 10px 0 rgba(0, 0, 0, 0.3),
+    0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.hobby-icon {
+  font-size: 4rem;
+  margin-bottom: 15px;
+  z-index: 10;
+  position: relative;
+}
+
+.hobby-card h3 {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #000;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  z-index: 10;
+  position: relative;
+}
+
+.hobby-desc {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  margin-bottom: 12px;
+  z-index: 10;
+  position: relative;
+}
+
+.hobby-quote {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #666;
+  text-align: center;
+  margin-bottom: 12px;
+  z-index: 10;
+  position: relative;
+}
+
+.hobby-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin-top: auto;
+  z-index: 10;
+  position: relative;
+}
+
+.hobby-tags span {
+  padding: 5px 10px;
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #333;
+  text-transform: uppercase;
+}
+
+/* Contact Section */
+.contact-section {
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  padding: 50px;
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-left: 4px solid #FF0037;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.5);
+  transform: translateX(3px);
+}
+
+.contact-icon {
+  font-size: 1.8rem;
+}
+
+.contact-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+}
+
+.contact-link {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #FFC904;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.contact-link:hover {
+  color: white;
+}
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  padding: 50px 40px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+}
+
+.cta-section p {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 40px;
+  background: linear-gradient(135deg, #FF0037, #cc0028);
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 900;
+  border: 3px solid white;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 
+    5px 5px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px rgba(255, 0, 55, 0.3);
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    7px 7px 0 rgba(0, 0, 0, 0.25),
+    0 10px 30px rgba(255, 0, 55, 0.4);
+}
+
+.cta-arrow {
+  font-size: 1.3rem;
+  font-weight: 900;
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover .cta-arrow {
+  transform: translateX(5px);
+}
+
+/* 响应式 */
+@media (max-width: 1200px) {
+  .hobbies-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 40px 20px;
+  }
+
+  .about-section {
+    padding: 30px 20px;
+  }
+
+  .intro-section h1 {
+    font-size: 2.5rem;
+    padding: 15px 40px;
+  }
+
+  .about-section h2 {
+    font-size: 2rem;
+    padding: 12px 35px;
+  }
+
+  /* 移动端隐藏左侧羽毛球 */
+  .skill-progress-item::after {
+    display: none;
+  }
+
+  /* 缩小羽毛球图标 */
+  .skill-name::before {
+    font-size: 1rem;
+    margin-right: 8px;
+  }
+
+  .progress-fill::after {
+    font-size: 1rem;
+    right: -20px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hobbies-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .hobby-card {
+    padding: 20px 15px;
+  }
+
+  .hobby-icon {
+    font-size: 3rem;
+  }
+
+  .hobby-card h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-section h1 {
+    font-size: 2rem;
+    padding: 12px 30px;
+  }
+
+  .about-section h2 {
+    font-size: 1.6rem;
+    padding: 10px 25px;
+  }
+
+  .hobbies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hobby-card {
+    aspect-ratio: auto;
+    min-height: 350px;
+  }
+}
