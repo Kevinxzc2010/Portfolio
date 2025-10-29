@@ -4,9 +4,11 @@ import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
 import "./Contact.css";
 import { useTranslation } from "react-i18next"; // ← 添加
+import { API_URL } from "../config";
 
 function Contact() {
   const { t } = useTranslation();
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,17 +24,24 @@ function Contact() {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    console.log("表单数据:", formData);
-    setSubmitted(true);
-
-    setTimeout(() => {
-      setFormData({ name: "", email: "", message: "" });
-      setSubmitted(false);
-    }, 3000);
-  };
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  
+  try {
+    const response = await fetch(`${API_URL}/api/contact`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+    
+    const data = await response.json();
+    console.log('Success:', data);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+};
 
   return (
     <div className="contact">
