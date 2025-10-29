@@ -1,8 +1,7 @@
 .home {
   min-height: 100vh;
-  background: 
-    linear-gradient(rgba(139, 0, 0, 0.7), rgba(255, 0, 55, 0.7)),
-    url('https://images6.alphacoders.com/139/1398075.jpg');
+  background: linear-gradient(rgba(139, 0, 0, 0.7), rgba(255, 0, 55, 0.7)),
+    url("https://images6.alphacoders.com/139/1398075.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -11,7 +10,7 @@
 /* 英雄区 */
 /* Supreme 装饰性水印 */
 .hero-section::before {
-  content: 'SUPREME';
+  content: "SUPREME";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -22,7 +21,7 @@
   letter-spacing: 20px;
   pointer-events: none;
   z-index: 0;
-  font-family: 'Futura', 'Arial', sans-serif;
+  font-family: "Futura", "Arial", sans-serif;
 }
 
 .hero-content {
@@ -36,7 +35,7 @@
 .hero-badge {
   display: inline-block;
   padding: 10px 25px;
-  background: #FF0037;
+  background: #ff0037;
   border: 3px solid white;
   border-radius: 0;
   color: white;
@@ -45,7 +44,7 @@
   margin-bottom: 30px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-family: 'Futura', 'Arial', sans-serif;
+  font-family: "Futura", "Arial", sans-serif;
   box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
 }
 
@@ -61,18 +60,18 @@
 
 .hero-title .highlight {
   background-color: #000000;
-  background-image: url('/src/assets/70-700323_ucf-logo-university-of-central-florida-hd-png.png');
-  
+  background-image: url("/src/assets/70-700323_ucf-logo-university-of-central-florida-hd-png.png");
+
   /* Logo 本身的大小 */
   background-size: 50px 20px;
-  
+
   /* 重复的间距（关键！） */
   background-repeat: repeat;
-  
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  
+
   font-weight: 900;
   letter-spacing: 0.5px;
 }
@@ -83,8 +82,7 @@
   overflow: hidden;
   border-right: 3px solid rgba(255, 201, 4, 0.8);
   white-space: nowrap;
-  animation: 
-    typing 3s steps(11, end) 1s both,
+  animation: typing 3s steps(11, end) 1s both,
     blink-caret 0.75s step-end infinite;
   max-width: 0;
 }
@@ -99,7 +97,8 @@
 }
 
 @keyframes blink-caret {
-  from, to {
+  from,
+  to {
     border-color: transparent;
   }
   50% {
@@ -152,7 +151,7 @@
 /* Supreme 风格主按钮 */
 .cta-primary {
   padding: 16px 45px;
-  background: #FF0037;
+  background: #ff0037;
   color: white;
   border: 3px solid white;
   border-radius: 0;
@@ -160,26 +159,20 @@
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-family: 'Futura', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Futura", "Helvetica", "Arial", sans-serif;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 
-    0 4px 0 #CC0029,
-    0 8px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 0 #cc0029, 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .cta-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 
-    0 6px 0 #CC0029,
-    0 12px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 6px 0 #cc0029, 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
 .cta-primary:active {
   transform: translateY(2px);
-  box-shadow: 
-    0 2px 0 #CC0029,
-    0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 0 #cc0029, 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Supreme 风格次要按钮 */
@@ -193,14 +186,14 @@
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-family: 'Futura', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Futura", "Helvetica", "Arial", sans-serif;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .cta-secondary:hover {
   background: white;
-  color: #FF0037;
+  color: #ff0037;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
 }
@@ -229,13 +222,13 @@
 }
 
 .skill-item::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -3px;
   left: -3px;
   right: -3px;
   bottom: -3px;
-  background: #FF0037;
+  background: #ff0037;
   z-index: -1;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -257,7 +250,7 @@
   margin-bottom: 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-family: 'Futura', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Futura", "Helvetica", "Arial", sans-serif;
 }
 
 .skill-item p {
@@ -283,16 +276,14 @@
   font-size: 2.5rem;
   font-weight: 900;
   color: white;
-  background: #FF0037;
+  background: #ff0037;
   border: 4px solid white;
   padding: 15px 40px;
   margin-bottom: 15px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  font-family: 'Futura', 'Helvetica', 'Arial', sans-serif;
-  box-shadow: 
-    6px 6px 0 rgba(0, 0, 0, 0.3),
-    0 8px 30px rgba(0, 0, 0, 0.2);
+  font-family: "Futura", "Helvetica", "Arial", sans-serif;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.3), 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
 .section-header p {
@@ -320,7 +311,7 @@
   backdrop-filter: blur(20px);
   border: 3px solid white;
   border-radius: 0;
-  border-left: 8px solid #FF0037;
+  border-left: 8px solid #ff0037;
   text-decoration: none;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -328,7 +319,7 @@
 }
 
 .project-item::after {
-  content: 'SUPREME';
+  content: "SUPREME";
   position: absolute;
   top: 10px;
   right: 10px;
@@ -336,15 +327,13 @@
   font-weight: 900;
   color: rgba(255, 255, 255, 0.2);
   letter-spacing: 2px;
-  font-family: 'Futura', 'Arial', sans-serif;
+  font-family: "Futura", "Arial", sans-serif;
 }
 
 .project-item:hover {
   transform: translateX(5px);
   border-left-width: 15px;
-  box-shadow: 
-    8px 0 0 rgba(255, 0, 55, 0.5),
-    12px 12px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 8px 0 0 rgba(255, 0, 55, 0.5), 12px 12px 30px rgba(0, 0, 0, 0.4);
 }
 
 @media (max-width: 768px) {
@@ -359,31 +348,31 @@
   }
 
   .project-info h3 {
-  font-size: 1.8rem;
-  font-weight: 900;
-  color: white;
-  margin-bottom: 8px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  font-family: 'Futura', 'Helvetica', 'Arial', sans-serif;
-}
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: "Futura", "Helvetica", "Arial", sans-serif;
+  }
 
   .project-brief {
     font-size: 0.9rem;
   }
 
   .tech-tag {
-  padding: 6px 14px;
-  background: #FF0037;
-  border: 2px solid white;
-  border-radius: 0;
-  font-size: 0.75rem;
-  color: white;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-family: 'Futura', 'Arial', sans-serif;
-}
+    padding: 6px 14px;
+    background: #ff0037;
+    border: 2px solid white;
+    border-radius: 0;
+    font-size: 0.75rem;
+    color: white;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: "Futura", "Arial", sans-serif;
+  }
 
   .arrow {
     font-size: 1.5rem;
@@ -422,7 +411,7 @@
   font-weight: 700;
   color: rgba(255, 255, 255, 0.5);
   min-width: 60px;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
 }
 
 .project-info {
@@ -464,9 +453,8 @@
   align-items: center;
   font-size: 1.5rem;
   color: white;
-  background: 
-    linear-gradient(rgba(139, 0, 0, 0.7), rgba(255, 0, 55, 0.7)),
-    url('../assets/1398075.jpg');
+  background: linear-gradient(rgba(139, 0, 0, 0.7), rgba(255, 0, 55, 0.7)),
+    url("../assets/1398075.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -560,10 +548,12 @@
 }
 
 @keyframes blink {
-  0%, 49% {
+  0%,
+  49% {
     opacity: 1;
   }
-  50%, 100% {
+  50%,
+  100% {
     opacity: 0;
   }
 }
@@ -600,5 +590,112 @@
 }
 
 .about-section {
-    padding: 35px 25px;
+  padding: 35px 25px;
+}
+
+/* 项目容器 */
+.featured-projects {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featured-projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+/* 项目网格 */
+.projects-grid {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* 项目卡片 */
+.project-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+/* ========================================
+   手机端优化（重要！）
+   ======================================== */
+
+@media (max-width: 768px) {
+  .featured-projects {
+    padding: 40px 15px;
   }
+
+  .featured-projects h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  /* 强制单列布局 */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-card {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  /* 项目图片 */
+  .project-image {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  /* 项目标题 */
+  .project-title {
+    font-size: 1.3rem;
+  }
+
+  /* 项目描述 */
+  .project-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  /* 技术标签 */
+  .tech-tags {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
+}
+
+/* 超小屏幕 */
+@media (max-width: 480px) {
+  .featured-projects {
+    padding: 30px 10px;
+  }
+
+  .featured-projects h2 {
+    font-size: 1.5rem;
+  }
+
+  .project-card {
+    border-radius: 8px;
+  }
+
+  .project-image {
+    height: 180px;
+  }
+}
