@@ -1,23 +1,39 @@
+/* ═══════════════════════════════════════
+   App.css - 完整版（包含手机端修复）
+   ═══════════════════════════════════════ */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
 }
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "segoe UI",
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI",
     Roboto, Oxygen, Ubuntu, sans-serif;
+  overflow-x: hidden;
+  width: 100%;
 }
+
+/* ═══════════════════════════════════════
+   App 主容器
+   ═══════════════════════════════════════ */
 
 .App {
   min-height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
   padding: 40px 20px;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 .App::before {
@@ -45,6 +61,10 @@ body {
   }
 }
 
+/* ═══════════════════════════════════════
+   App Header
+   ═══════════════════════════════════════ */
+
 .App-header {
   text-align: center;
   padding: 60px 40px;
@@ -57,6 +77,7 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.5);
   margin-bottom: 40px;
   max-width: 1200px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -93,12 +114,21 @@ body {
   font-weight: 500;
 }
 
+/* ═══════════════════════════════════════
+   Projects Container
+   ═══════════════════════════════════════ */
+
 .projects-container {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   display: grid;
   gap: 32px;
 }
+
+/* ═══════════════════════════════════════
+   Project Card
+   ═══════════════════════════════════════ */
 
 .project-card {
   background: rgba(255, 255, 255, 0.12);
@@ -112,6 +142,8 @@ body {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 .project-card::before {
@@ -156,6 +188,7 @@ body {
   margin-bottom: 8px;
   font-weight: 500;
 }
+
 .period {
   color: rgba(255, 255, 255, 0.75);
   font-size: 0.95rem;
@@ -170,16 +203,20 @@ body {
   font-size: 1.05rem;
 }
 
-.tech-list{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
+/* ═══════════════════════════════════════
+   Tech Tags
+   ═══════════════════════════════════════ */
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-bottom: 24px;
 }
 
-.tech-tag{
-  background: rgba(255,255,255,0.2);
-   backdrop-filter: blur(10px);
+.tech-tag {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   color: white;
   padding: 8px 16px;
@@ -195,6 +232,10 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+
+/* ═══════════════════════════════════════
+   Links / Buttons
+   ═══════════════════════════════════════ */
 
 .project-card a {
   color: white;
@@ -218,6 +259,10 @@ body {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
+/* ═══════════════════════════════════════
+   Page Center Content
+   ═══════════════════════════════════════ */
+
 .App > div {
   display: flex;
   justify-content: center;
@@ -228,34 +273,10 @@ body {
   font-weight: 500;
 }
 
-@media (max-width: 768px) {
-  .App {
-    padding: 20px 16px;
-  }
-  .App-header {
-    padding: 40px 24px;
-    border-radius: 20px;
-  }
+/* ═══════════════════════════════════════
+   Page Animations
+   ═══════════════════════════════════════ */
 
-  .App-header h1 {
-    font-size: 2.2rem;
-  }
-
-  .App-header p {
-    font-size: 1.1rem;
-  }
-
-  .project-card {
-    padding: 24px;
-    border-radius: 16px;
-  }
-
-  .project-card h2 {
-    font-size: 1.6rem;
-  }
-}
-
-/* 页面淡入 + 上移动画 */
 .home,
 .about,
 .contact,
@@ -271,5 +292,215 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ═══════════════════════════════════════
+   手机端响应式（768px 以下）
+   ═══════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+
+  .App {
+    padding: 20px 16px;
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+
+  .App-header {
+    padding: 40px 24px;
+    border-radius: 20px;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .App-header h1 {
+    font-size: 2.2rem;
+    word-break: break-word;
+  }
+
+  .App-header p {
+    font-size: 1.1rem;
+  }
+
+  .projects-container {
+    gap: 24px;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .project-card {
+    padding: 24px;
+    border-radius: 16px;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .project-card h2 {
+    font-size: 1.6rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .tech-list {
+    gap: 8px;
+  }
+
+  .tech-tag {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+
+  .project-card a {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  /* 防止悬停效果在手机上造成问题 */
+  .project-card:hover {
+    transform: none;
+  }
+
+  .tech-tag:hover {
+    transform: none;
+  }
+}
+
+/* ═══════════════════════════════════════
+   超小屏幕（480px 以下）
+   ═══════════════════════════════════════ */
+
+@media (max-width: 480px) {
+  .App {
+    padding: 15px 10px;
+  }
+
+  .App-header {
+    padding: 30px 20px;
+    border-radius: 16px;
+  }
+
+  .App-header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+
+  .App-header p {
+    font-size: 1rem;
+  }
+
+  .projects-container {
+    gap: 20px;
+  }
+
+  .project-card {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .project-card h2 {
+    font-size: 1.4rem;
+  }
+
+  .role {
+    font-size: 0.9rem;
+  }
+
+  .period {
+    font-size: 0.85rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .tech-tag {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+
+  .project-card a {
+    font-size: 0.85rem;
+    padding: 8px 14px;
+  }
+}
+
+/* ═══════════════════════════════════════
+   通用容器修复 - 防止横向滚动
+   ═══════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  /* 所有页面容器 */
+  .home-container,
+  .about-container,
+  .contact-container,
+  .page,
+  .page-container,
+  section,
+  .section {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+  /* Featured Projects */
+  .featured-projects {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    padding: 30px 15px !important;
+  }
+
+  .projects-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* 导航栏 */
+  nav,
+  .navbar,
+  .navigation,
+  header {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  /* 图片 */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* 表格 */
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+  }
+
+  /* 代码块 */
+  pre,
+  code {
+    max-width: 100%;
+    overflow-x: auto;
+    word-wrap: break-word;
   }
 }
