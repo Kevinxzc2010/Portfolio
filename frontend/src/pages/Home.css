@@ -1,3 +1,7 @@
+/* ═══════════════════════════════════════
+   Home.css - 完整版
+   ═══════════════════════════════════════ */
+
 .home {
   min-height: 100vh;
   background: linear-gradient(rgba(139, 0, 0, 0.7), rgba(255, 0, 55, 0.7)),
@@ -10,12 +14,16 @@
   overflow-x: hidden;
 }
 
-/* 英雄区 */
+/* ═══════════════════════════════════════
+   Hero Section - 英雄区
+   ═══════════════════════════════════════ */
+
 .hero-section {
   position: relative;
   overflow: hidden;
   width: 100%;
   max-width: 100vw;
+  padding: 120px 40px 80px;
 }
 
 /* Supreme 装饰性水印 */
@@ -81,39 +89,24 @@
   letter-spacing: 0.5px;
 }
 
-/* 打字机效果 */
-.typewriter {
+/* 打字机光标 */
+.cursor {
   display: inline-block;
-  overflow: hidden;
-  border-right: 3px solid rgba(255, 201, 4, 0.8);
-  white-space: nowrap;
-  animation: typing 3s steps(11, end) 1s both,
-    blink-caret 0.75s step-end infinite;
-  max-width: 0;
+  width: 3px;
+  margin-left: 5px;
+  background: rgba(255, 201, 4, 0.8);
+  animation: blink 1s infinite;
 }
 
-@keyframes typing {
-  from {
-    max-width: 0;
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
   }
-  to {
-    max-width: 100%;
+  50%,
+  100% {
+    opacity: 0;
   }
-}
-
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: rgba(255, 201, 4, 0.8);
-  }
-}
-
-.typewriter.typed {
-  border-right: none;
-  animation: typing 3s steps(11, end) 1s both;
 }
 
 .hero-subtitle {
@@ -141,17 +134,7 @@
   justify-content: center;
 }
 
-.cta-primary,
-.cta-secondary {
-  padding: 18px 40px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  border-radius: 14px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-
+/* Supreme 风格主按钮 */
 .cta-primary {
   padding: 16px 45px;
   background: #ff0037;
@@ -166,6 +149,7 @@
   text-decoration: none;
   transition: all 0.3s ease;
   box-shadow: 0 4px 0 #cc0029, 0 8px 20px rgba(0, 0, 0, 0.3);
+  display: inline-block;
 }
 
 .cta-primary:hover {
@@ -178,6 +162,7 @@
   box-shadow: 0 2px 0 #cc0029, 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* Supreme 风格次要按钮 */
 .cta-secondary {
   padding: 16px 45px;
   background: transparent;
@@ -191,6 +176,7 @@
   font-family: "Futura", "Helvetica", "Arial", sans-serif;
   text-decoration: none;
   transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .cta-secondary:hover {
@@ -200,7 +186,10 @@
   box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
 }
 
-/* 技能亮点 */
+/* ═══════════════════════════════════════
+   Skills Highlight - 技能亮点
+   ═══════════════════════════════════════ */
+
 .skills-highlight {
   padding: 60px 40px;
   max-width: 1200px;
@@ -247,6 +236,11 @@
   opacity: 1;
 }
 
+.skill-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
 .skill-item h3 {
   font-size: 1.3rem;
   font-weight: 900;
@@ -260,9 +254,177 @@
 .skill-item p {
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
 }
 
-/* 项目展示区 */
+/* ═══════════════════════════════════════
+   Featured Projects Section - 特色项目
+   ═══════════════════════════════════════ */
+
+.featured-projects {
+  padding: 80px 40px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px);
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.featured-projects .section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.featured-projects .section-header h2 {
+  display: inline-block;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: white;
+  background: #ff0037;
+  border: 4px solid white;
+  padding: 15px 50px;
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-family: "Futura", "Helvetica", "Arial", sans-serif;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+.featured-projects .section-header p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: 3px solid white;
+  border-radius: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 100%;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) rotate(1deg);
+  box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.3);
+  border-color: #ff0037;
+}
+
+.project-image-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.1);
+}
+
+.project-content {
+  padding: 30px;
+}
+
+.project-title {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #000;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Futura", "Arial", sans-serif;
+}
+
+.project-description {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tech-tag {
+  padding: 8px 16px;
+  background: #ff0037;
+  color: white;
+  border: 2px solid #000;
+  border-radius: 0;
+  font-size: 0.85rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: "Futura", "Arial", sans-serif;
+}
+
+.project-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.project-link {
+  padding: 12px 24px;
+  background: #000;
+  color: white;
+  border: 2px solid #000;
+  border-radius: 0;
+  text-decoration: none;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  font-family: "Futura", "Arial", sans-serif;
+  display: inline-block;
+}
+
+.project-link:hover {
+  background: #ff0037;
+  border-color: #ff0037;
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+.github-link {
+  background: transparent;
+  color: #000;
+  border: 2px solid #000;
+}
+
+.github-link:hover {
+  background: #000;
+  color: white;
+}
+
+/* ═══════════════════════════════════════
+   Projects Section - 项目展示区
+   ═══════════════════════════════════════ */
+
 .projects-section {
   padding: 60px 40px 80px;
   max-width: 1200px;
@@ -396,6 +558,12 @@
   line-height: 1.5;
 }
 
+.project-tech-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 .arrow {
   font-size: 2rem;
   color: rgba(255, 255, 255, 0.6);
@@ -407,6 +575,10 @@
   transform: translateX(10px);
   color: white;
 }
+
+/* ═══════════════════════════════════════
+   Loading State
+   ═══════════════════════════════════════ */
 
 .loading {
   min-height: 100vh;
@@ -422,85 +594,9 @@
   background-attachment: fixed;
 }
 
-.cursor {
-  display: inline-block;
-  width: 3px;
-  margin-left: 5px;
-  background: rgba(255, 201, 4, 0.8);
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  0%,
-  49% {
-    opacity: 1;
-  }
-  50%,
-  100% {
-    opacity: 0;
-  }
-}
-
-.project-tech-tags {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.tech-tag {
-  padding: 4px 12px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.about-section {
-  padding: 35px 25px;
-}
-
-.featured-projects {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-  padding: 80px 20px;
-}
-
-.featured-projects h2 {
-  font-size: 2.5rem;
-  margin-bottom: 50px;
-  text-align: center;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.project-card {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  width: 100%;
-  max-width: 100%;
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-}
-
-/* ════════════════════════════════════════
-   手机端响应式修复（重要！）
-   ════════════════════════════════════════ */
+/* ═══════════════════════════════════════
+   手机端响应式（768px 以下）
+   ═══════════════════════════════════════ */
 
 @media (max-width: 968px) {
   .skills-container {
@@ -513,7 +609,8 @@
   .home,
   .hero-section,
   .skills-highlight,
-  .projects-section {
+  .projects-section,
+  .featured-projects {
     width: 100% !important;
     max-width: 100vw !important;
     overflow-x: hidden !important;
@@ -521,8 +618,8 @@
 
   /* Supreme 水印 - 缩小到适配手机 */
   .hero-section::before {
-    font-size: 5rem !important;  /* 从 15rem 缩小到 5rem */
-    letter-spacing: 5px !important;  /* 从 20px 缩小到 5px */
+    font-size: 5rem !important;
+    letter-spacing: 5px !important;
   }
 
   .hero-section {
@@ -539,19 +636,24 @@
 
   .hero-description {
     font-size: 1.1rem;
+    padding: 0 10px;
   }
 
   .hero-buttons {
     flex-direction: column;
     width: 100%;
+    padding: 0 20px;
   }
 
   .cta-primary,
   .cta-secondary {
     width: 100%;
     text-align: center;
+    padding: 14px 30px;
+    font-size: 1rem;
   }
 
+  /* Skills */
   .skills-highlight {
     padding: 40px 20px;
   }
@@ -561,6 +663,61 @@
     gap: 20px;
   }
 
+  .skill-item {
+    padding: 25px;
+  }
+
+  /* Featured Projects */
+  .featured-projects {
+    padding: 50px 20px !important;
+  }
+
+  .featured-projects .section-header h2 {
+    font-size: 2rem;
+    padding: 12px 30px;
+  }
+
+  .featured-projects .section-header p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px;
+  }
+
+  .project-card {
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  .project-image-container {
+    height: 200px;
+  }
+
+  .project-content {
+    padding: 20px;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+  }
+
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+  }
+
+  .project-link {
+    font-size: 0.85rem;
+    padding: 10px 20px;
+  }
+
+  /* Projects Section */
   .projects-section {
     padding: 40px 20px 60px;
   }
@@ -572,6 +729,7 @@
 
   .section-header p {
     font-size: 1.1rem;
+    padding: 0 10px;
   }
 
   .project-item {
@@ -585,8 +743,7 @@
   }
 
   .project-number {
-    font-size: 1.5rem;
-    min-width: 40px;
+    display: none;
   }
 
   .project-info h3 {
@@ -600,77 +757,12 @@
   .arrow {
     font-size: 1.5rem;
   }
-
-  .tech-tag {
-    padding: 6px 14px;
-    font-size: 0.75rem;
-  }
-
-  /* Featured Projects */
-  .featured-projects {
-    padding: 40px 15px !important;
-    display: block !important;
-    visibility: visible !important;
-  }
-
-  .featured-projects h2 {
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-    display: grid !important;
-  }
-
-  .project-card {
-    max-width: 100%;
-    margin: 0;
-  }
-
-  .project-image {
-    height: 200px;
-    object-fit: cover;
-    width: 100%;
-  }
-
-  .project-title {
-    font-size: 1.3rem;
-    padding: 0 15px;
-  }
-
-  .project-description {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    padding: 0 15px;
-  }
-
-  .tech-tags {
-    flex-wrap: wrap;
-    gap: 8px;
-    padding: 0 15px;
-  }
-
-  .project-content {
-    padding: 15px;
-  }
-
-  /* Supreme 背景 */
-  .supreme-bg {
-    max-width: 100vw !important;
-    overflow: hidden !important;
-  }
-
-  /* 扑克牌 */
-  .poker-cards-container {
-    max-width: 100vw !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch;
-  }
 }
 
-/* 超小屏幕 */
+/* ═══════════════════════════════════════
+   超小屏幕（480px 以下）
+   ═══════════════════════════════════════ */
+
 @media (max-width: 480px) {
   /* Supreme 水印 - 超小屏幕进一步缩小 */
   .hero-section::before {
@@ -678,24 +770,84 @@
     letter-spacing: 3px !important;
   }
 
+  .hero-section {
+    padding: 60px 15px 40px;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .cta-primary,
+  .cta-secondary {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+  }
+
+  /* Featured Projects */
   .featured-projects {
-    padding: 30px 10px !important;
+    padding: 40px 15px !important;
   }
 
-  .featured-projects h2 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+  .featured-projects .section-header h2 {
+    font-size: 1.6rem;
+    padding: 10px 25px;
   }
 
-  .project-card {
-    border-radius: 8px;
-  }
-
-  .project-image {
+  .project-image-container {
     height: 180px;
   }
 
   .project-content {
-    padding: 12px;
+    padding: 15px;
+  }
+
+  .project-title {
+    font-size: 1.3rem;
+  }
+
+  .project-links {
+    flex-direction: column;
+  }
+
+  .project-link {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Projects Section */
+  .projects-section {
+    padding: 30px 15px 50px;
+  }
+
+  .section-header h2 {
+    font-size: 1.8rem;
+    padding: 10px 20px;
+  }
+
+  .project-item {
+    padding: 15px;
+    gap: 12px;
+  }
+
+  .project-thumbnail {
+    width: 70px;
+    height: 70px;
+  }
+
+  .project-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .project-brief {
+    font-size: 0.85rem;
   }
 }
