@@ -5,9 +5,19 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 /* 英雄区 */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
 /* Supreme 装饰性水印 */
 .hero-section::before {
   content: "SUPREME";
@@ -22,12 +32,13 @@
   pointer-events: none;
   z-index: 0;
   font-family: "Futura", "Arial", sans-serif;
+  white-space: nowrap;
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
-  text-align: center; /* ← 确保这行 */
+  text-align: center;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -55,23 +66,17 @@
   margin-bottom: 20px;
   letter-spacing: -2px;
   line-height: 1.1;
-  text-align: center; /* ← 确保这行存在 */
+  text-align: center;
 }
 
 .hero-title .highlight {
   background-color: #000000;
   background-image: url("/src/assets/70-700323_ucf-logo-university-of-central-florida-hd-png.png");
-
-  /* Logo 本身的大小 */
   background-size: 50px 20px;
-
-  /* 重复的间距（关键！） */
   background-repeat: repeat;
-
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-
   font-weight: 900;
   letter-spacing: 0.5px;
 }
@@ -106,7 +111,6 @@
   }
 }
 
-/* 打字完成后移除光标 */
 .typewriter.typed {
   border-right: none;
   animation: typing 3s steps(11, end) 1s both;
@@ -148,7 +152,6 @@
   display: inline-block;
 }
 
-/* Supreme 风格主按钮 */
 .cta-primary {
   padding: 16px 45px;
   background: #ff0037;
@@ -175,7 +178,6 @@
   box-shadow: 0 2px 0 #cc0029, 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Supreme 风格次要按钮 */
 .cta-secondary {
   padding: 16px 45px;
   background: transparent;
@@ -197,11 +199,13 @@
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
 }
+
 /* 技能亮点 */
 .skills-highlight {
   padding: 60px 40px;
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .skills-container {
@@ -263,6 +267,7 @@
   padding: 60px 40px 80px;
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .section-header {
@@ -270,7 +275,6 @@
   margin-bottom: 60px;
 }
 
-/* Supreme Box 风格 Section 标题 */
 .section-header h2 {
   display: inline-block;
   font-size: 2.5rem;
@@ -293,7 +297,6 @@
   font-weight: 600;
 }
 
-/* 项目列表 */
 .projects-list {
   display: flex;
   flex-direction: column;
@@ -316,6 +319,8 @@
   transition: all 0.3s ease;
   cursor: pointer;
   position: relative;
+  width: 100%;
+  max-width: 100%;
 }
 
 .project-item::after {
@@ -334,49 +339,6 @@
   transform: translateX(5px);
   border-left-width: 15px;
   box-shadow: 8px 0 0 rgba(255, 0, 55, 0.5), 12px 12px 30px rgba(0, 0, 0, 0.4);
-}
-
-@media (max-width: 768px) {
-  .project-item {
-    padding: 20px;
-    gap: 15px;
-  }
-
-  .project-thumbnail {
-    width: 80px;
-    height: 80px;
-  }
-
-  .project-info h3 {
-    font-size: 1.8rem;
-    font-weight: 900;
-    color: white;
-    margin-bottom: 8px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-family: "Futura", "Helvetica", "Arial", sans-serif;
-  }
-
-  .project-brief {
-    font-size: 0.9rem;
-  }
-
-  .tech-tag {
-    padding: 6px 14px;
-    background: #ff0037;
-    border: 2px solid white;
-    border-radius: 0;
-    font-size: 0.75rem;
-    color: white;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-family: "Futura", "Arial", sans-serif;
-  }
-
-  .arrow {
-    font-size: 1.5rem;
-  }
 }
 
 .project-thumbnail {
@@ -438,6 +400,7 @@
   font-size: 2rem;
   color: rgba(255, 255, 255, 0.6);
   transition: transform 0.3s ease;
+  flex-shrink: 0;
 }
 
 .project-item:hover .arrow {
@@ -445,7 +408,6 @@
   color: white;
 }
 
-/* 加载状态 */
 .loading {
   min-height: 100vh;
   display: flex;
@@ -460,85 +422,6 @@
   background-attachment: fixed;
 }
 
-/* 响应式 */
-@media (max-width: 968px) {
-  .skills-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-section {
-    padding: 80px 20px 60px;
-  }
-
-  .hero-title {
-    font-size: 2.8rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.4rem;
-  }
-
-  .hero-description {
-    font-size: 1.1rem;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-  }
-
-  .cta-primary,
-  .cta-secondary {
-    width: 100%;
-    text-align: center;
-  }
-
-  .skills-highlight {
-    padding: 40px 20px;
-  }
-
-  .skills-container {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .projects-section {
-    padding: 40px 20px 60px;
-  }
-
-  .section-header h2 {
-    font-size: 2.2rem;
-  }
-
-  .section-header p {
-    font-size: 1.1rem;
-  }
-
-  .project-item {
-    padding: 20px 24px;
-    gap: 20px;
-  }
-
-  .project-number {
-    font-size: 1.5rem;
-    min-width: 40px;
-  }
-
-  .project-info h3 {
-    font-size: 1.4rem;
-  }
-
-  .project-brief {
-    font-size: 0.9rem;
-  }
-
-  .arrow {
-    font-size: 1.5rem;
-  }
-}
-
-/* 打字机光标 */
 .cursor {
   display: inline-block;
   width: 3px;
@@ -558,7 +441,6 @@
   }
 }
 
-/* 技术标签 */
 .project-tech-tags {
   display: flex;
   gap: 8px;
@@ -576,24 +458,10 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* 箭头 */
-.arrow {
-  font-size: 2rem;
-  color: rgba(255, 255, 255, 0.6);
-  transition: transform 0.3s ease;
-  flex-shrink: 0;
-}
-
-.project-item:hover .arrow {
-  transform: translateX(10px);
-  color: white;
-}
-
 .about-section {
   padding: 35px 25px;
 }
 
-/* 项目容器 */
 .featured-projects {
   width: 100%;
   max-width: 100%;
@@ -623,17 +491,122 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   width: 100%;
+  max-width: 100%;
 }
 
 .project-card:hover {
   transform: translateY(-10px);
 }
 
-/* ========================================
-   手机端响应式（重要！）
-   ======================================== */
+/* ════════════════════════════════════════
+   手机端响应式修复（重要！）
+   ════════════════════════════════════════ */
+
+@media (max-width: 968px) {
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 @media (max-width: 768px) {
+  /* 全局容器 */
+  .home,
+  .hero-section,
+  .skills-highlight,
+  .projects-section {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Supreme 水印 - 缩小到适配手机 */
+  .hero-section::before {
+    font-size: 5rem !important;  /* 从 15rem 缩小到 5rem */
+    letter-spacing: 5px !important;  /* 从 20px 缩小到 5px */
+  }
+
+  .hero-section {
+    padding: 80px 20px 60px;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-primary,
+  .cta-secondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .skills-highlight {
+    padding: 40px 20px;
+  }
+
+  .skills-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .projects-section {
+    padding: 40px 20px 60px;
+  }
+
+  .section-header h2 {
+    font-size: 2.2rem;
+    padding: 12px 30px;
+  }
+
+  .section-header p {
+    font-size: 1.1rem;
+  }
+
+  .project-item {
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .project-thumbnail {
+    width: 80px;
+    height: 80px;
+  }
+
+  .project-number {
+    font-size: 1.5rem;
+    min-width: 40px;
+  }
+
+  .project-info h3 {
+    font-size: 1.4rem;
+  }
+
+  .project-brief {
+    font-size: 0.9rem;
+  }
+
+  .arrow {
+    font-size: 1.5rem;
+  }
+
+  .tech-tag {
+    padding: 6px 14px;
+    font-size: 0.75rem;
+  }
+
+  /* Featured Projects */
   .featured-projects {
     padding: 40px 15px !important;
     display: block !important;
@@ -645,7 +618,6 @@
     margin-bottom: 30px;
   }
 
-  /* 强制单列布局 */
   .projects-grid {
     grid-template-columns: 1fr !important;
     gap: 20px !important;
@@ -657,46 +629,55 @@
     margin: 0;
   }
 
-  /* 项目图片 */
   .project-image {
     height: 200px;
     object-fit: cover;
     width: 100%;
   }
 
-  /* 项目标题 */
   .project-title {
     font-size: 1.3rem;
     padding: 0 15px;
   }
 
-  /* 项目描述 */
   .project-description {
     font-size: 0.9rem;
     line-height: 1.5;
     padding: 0 15px;
   }
 
-  /* 技术标签 */
   .tech-tags {
     flex-wrap: wrap;
     gap: 8px;
     padding: 0 15px;
   }
 
-  .tech-tag {
-    font-size: 0.75rem;
-    padding: 4px 8px;
-  }
-
-  /* 项目内容区域 */
   .project-content {
     padding: 15px;
+  }
+
+  /* Supreme 背景 */
+  .supreme-bg {
+    max-width: 100vw !important;
+    overflow: hidden !important;
+  }
+
+  /* 扑克牌 */
+  .poker-cards-container {
+    max-width: 100vw !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
 /* 超小屏幕 */
 @media (max-width: 480px) {
+  /* Supreme 水印 - 超小屏幕进一步缩小 */
+  .hero-section::before {
+    font-size: 3rem !important;
+    letter-spacing: 3px !important;
+  }
+
   .featured-projects {
     padding: 30px 10px !important;
   }
@@ -716,36 +697,5 @@
 
   .project-content {
     padding: 12px;
-  }
-}
-
-/* ========================================
-   防止所有主要容器超出屏幕
-   ======================================== */
-
-@media (max-width: 768px) {
-  .home-container,
-  .hero-section,
-  .welcome-section,
-  .about-preview,
-  .skills-preview,
-  .hobbies-preview,
-  .cta-section {
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
-    width: 100% !important;
-  }
-
-  /* Supreme 背景 */
-  .supreme-bg {
-    max-width: 100vw !important;
-    overflow: hidden !important;
-  }
-
-  /* 扑克牌 */
-  .poker-cards-container {
-    max-width: 100vw !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch;
   }
 }
